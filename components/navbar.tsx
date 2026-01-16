@@ -1,30 +1,36 @@
-import { Button } from "@/components/ui/button"
+"use client"
+
+import { signOut, useSession } from "next-auth/react"
 
 export function Navbar() {
+  const { data: session } = useSession()
+
   return (
-    <nav className="sticky top-0 z-50 border-b border-zinc-100 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-10 py-4">
-        
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-            <div className="w-4 h-1 bg-white rounded-full -rotate-45 translate-x-0.5" />
-            <div className="w-4 h-1 bg-white rounded-full rotate-45 -translate-x-0.5" />
-          </div>
-          <span className="font-bold text-xl tracking-tight">LinkCarousel</span>
-        </div>
+    <nav className="fixed top-0 inset-x-0 h-14 border-b bg-white flex items-center justify-between px-6 z-50">
+      <span className="font-bold">
+        CarouselAI
+      </span>
 
-        {/* Actions */}
+      {session ? (
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="font-medium">
-            Log in
-          </Button>
-          <Button className="bg-black text-white hover:bg-zinc-800 rounded-full px-6">
-            Sign up
-          </Button>
+          <span className="text-sm text-zinc-500">
+            {session.user?.email}
+          </span>
+          <button
+            onClick={() => signOut()}
+            className="text-sm font-medium"
+          >
+            Salir
+          </button>
         </div>
-
-      </div>
+      ) : (
+        <a
+          href="/login"
+          className="text-sm font-medium"
+        >
+          Login
+        </a>
+      )}
     </nav>
   )
 }

@@ -1,15 +1,19 @@
-import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Editor } from "@/components/editor"
+import { Navbar } from "@/components/navbar";
+import { Wizard } from "@/components/wizard/Wizard";
+import { TestSupabaseButton } from "@/components/TestSupabaseButton";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white selection:bg-black selection:text-white">
       <Navbar />
-      <Hero />
-      <div className="max-w-(--break-2xl) mx-auto px-4 pb-20">
-        <Editor />
+
+      <div className="pt-16">
+        <Wizard />
+
+        <div className="mt-8 px-4">
+          <TestSupabaseButton />
+        </div>
       </div>
     </main>
-  )
+  );
 }

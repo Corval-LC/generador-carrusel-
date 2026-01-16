@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Subtítulos</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 600px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .subtitle {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+      color: white;
+      font-weight: bold;
+      text-shadow: 0 2px 8px black;
+      padding: 0 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <video id="video" controls>
+    <source src="http://localhost:3001/videos/1767913850391-CÃ³mo perder menos tiempo para grabar contenido.mp4
+" type="video/mp4">
+  </video>
+  <div id="subtitle" class="subtitle"></div>
+</div>
+
+<script>
+  const video = document.getElementById("video");
+  const subtitleEl = document.getElementById("subtitle");
+
+  let subtitles = [];
+
+  fetch("http://localhost:3001/subtitles/1767913850391-CÃ³mo perder menos tiempo para grabar contenido.mp4")
+    .then(res => res.json())
+    .then(data => subtitles = data);
+
+  video.addEventListener("timeupdate", () => {
+    const current = video.currentTime;
+
+    const active = subtitles.find(
+      s => current >= s.start && current <= s.end
+    );
+
+    subtitleEl.textContent = active ? active.text : "";
+  });
+</script>
+
+</body>
+</html>

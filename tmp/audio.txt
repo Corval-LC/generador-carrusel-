@@ -1,0 +1,10 @@
+Ahí te va una paradoja. ¿Qué pasaría si tus amigos te dijeran que te harán una broma muy pesada al mediodía de uno de los días de la próxima semana?
+Que puede ser cualquier día, desde lunes hasta el domingo, pero que la broma tiene que agarrarte por sorpresa para que funcione.
+No puedes saber el día exacto hasta que tus amigos aparezcan al mediodía de ese día y te la jueguen.
+Tú rápidamente razonas que no puedes ser sorprendido el último día de la semana, o sea el domingo, porque entonces no sería una sorpresa.
+Y siguiendo a esta lógica descartas también el sábado, porque ya descartaste el domingo, y de la misma forma descartas el viernes, y así hasta descartarlos todos.
+Concluyendo que no puedes ser sorprendido en ninguno de los días de la semana.
+Sin embargo, te quedas totalmente sorprendido cuando a mediados de semana tus amigos llegan por sorpresa y te hacen una de las peores bromas de tu vida.
+Entonces, ¿en dónde falló tu razonamiento y cómo te puede salvar de la broma?
+Intentemos resolverlo en los comentarios.
+Y cuéntame cuál sería la peor broma para ti.
