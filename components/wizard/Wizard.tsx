@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Hero } from "@/components/hero";
 import { LoadingScreen } from "@/components/loading/LoadingScreen";
 import { IdeasScreen } from "@/components/ideas/IdeasScreen";
-import { Editor } from "@/components/editor/Editor";
+import  Editor  from "@/components/editor/Editor";
 
 import { processVideo } from "@/app/actions/processVideo";
 import { textToIdeas, Slide } from "@/lib/textToIdeas";

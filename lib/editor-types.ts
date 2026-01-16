@@ -7,7 +7,6 @@ export type Block = {
   x: number;
   y: number;
   width: number;
-  color?: string;
 };
 
 export type Slide = {
